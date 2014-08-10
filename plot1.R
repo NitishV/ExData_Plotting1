@@ -4,3 +4,5 @@ house.power$Date_Time = as.POSIXct(paste(house.power[,1], house.power[,2]), form
 house.power = house.power[,c(10,2:9)]
 house.power = subset(house.power, house.power$Date_Time > as.POSIXct('2007-02-01 00:00:00') & house.power$Date_Time <   as.POSIXct('2007-02-03 00:00:00'))
 hist(x=house.power$Global_active_power, col = 'red', main = 'Global Active Power', xlab = 'Global Active Power (kilowatts)', cex.lab=0.8)
+dev.copy(png, file='plot1.png')
+dev.off()
