@@ -3,7 +3,7 @@ house.power = read.table(file='./household_power_consumption.txt', header=T, sep
 house.power$Date_Time = as.POSIXct(paste(house.power[,1], house.power[,2]), format="%d/%m/%Y %H:%M:%S")
 house.power = house.power[,c(10,2:9)]
 house.power = subset(house.power, house.power$Date_Time > as.POSIXct('2007-02-01 00:00:00') & house.power$Date_Time <   as.POSIXct('2007-02-03 00:00:00'))
-plot(house.power$Date_Time, house.power$Sub_metering_1, type = 'n', xlab='', ylab='Energy sub Metering', cex.lab=0.7)
+plot(house.power$Date_Time, house.power$Sub_metering_1, type = 'n', xlab='', ylab='Energy sub Metering', cex.lab=0.8)
 points(house.power$Date_Time, house.power$Sub_metering_1, type='l')
 points(house.power$Date_Time, house.power$Sub_metering_2, type='l', col='red')
 points(house.power$Date_Time, house.power$Sub_metering_3, type='l', col='blue')
